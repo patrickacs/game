@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Daora</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body style="width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <div style="position: relative; display: inline-block;">
+    <div style="position: absolute; display: flex; width: 100%; align-items:center; padding:20px">
+      <!-- player1 health bar -->
+      <div style="position: relative;height: 30px; width: 100%; display: flex; justify-content: flex-end;">
+        <div style="background-color: yellow; height:30px;width:100%"></div>
+        <div id="player1Health" style="position: absolute;background: blue;top: 0; bottom: 0;right: 0; width:100%"></div>
+        
+      </div>
+      <!-- timer -->
+      <div style="background-color: red; height: 100px; width: 100px; flex-shrink:0;"></div>
+      <!-- player2 health bar -->
+      <div style="position: relative;height: 30px; width: 100%">
+        <div style="background-color: yellow;height: 30px;"></div>
+        <div id="player2Health" style="position: absolute;background: blue;top: 0; bottom: 0; left: 0; right: 0;" ></div>
+      </div>
+    </div>
+    <div id="endGame" style="
+      position: absolute;
+      color: white;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: none;
+    ">
+      Tie
+    </div>
+    <canvas style="background-image: url('img/eodale.png'); background-size: cover;">
+    </canvas>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

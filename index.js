@@ -7,15 +7,72 @@ canvas.height = 576;
 const gravity = 0.5;
 gameEnded = false;
 
-const player1 = new Fighter({
-  position: { x: 128, y: 0 }, 
-  velocity: { x: 0, y: 0 }
+const player1 = new Fighter({ 
+  position: { x: 128, y: 0 },
+  velocity: { x: 0, y: 0 },
+  imageSrc: './img/samuraiMack/Idle.png',
+  framesMax: 8,
+  scale: 2.5,
+  offset: {
+    x: 0,
+    y: 162
+  },
+  sprites: {
+    idle: {
+      imageSrc: './img/samuraiMack/Idle.png',
+      framesMax: 8
+    },
+    run: {
+      imageSrc: './img/samuraiMack/Run.png',
+      framesMax: 8
+    },
+    jump: {
+      imageSrc: './img/samuraiMack/Jump.png',
+      framesMax: 2
+    },
+    fall: {
+      imageSrc: './img/samuraiMack/Fall.png',
+      framesMax: 2
+    },
+    attack1: {
+      imageSrc: './img/samuraiMack/Attack1.png',
+      framesMax: 6
+    },
+  }
 });
 
 const player2 = new Fighter({
   position: { x: 840, y: 100 }, 
   velocity: { x: 0, y: 0 },
-  offset: -50
+  offset: {
+    x: -200,
+    y: 162
+  },
+  imageSrc: './img/kenji/Idle.png',
+  framesMax: 4,
+  scale: 2.5,
+  sprites: {
+    idle: {
+      imageSrc: './img/kenji/Idle.png',
+      framesMax: 4
+    },
+    run: {
+      imageSrc: './img/kenji/Run.png',
+      framesMax: 8
+    },
+    jump: {
+      imageSrc: './img/kenji/Jump.png',
+      framesMax: 2
+    },
+    fall: {
+      imageSrc: './img/kenji/Fall.png',
+      framesMax: 2
+    },
+    attack1: {
+      imageSrc: './img/kenji/Attack1.png',
+      framesMax: 4
+    },
+  }
 });
 
 
@@ -40,7 +97,7 @@ const handleKeyDown = {
     player1.rightPressed = true;
     // player1.velocity.x = 5;
   },
-  " ": () => {
+  "r": () => {
     player1.attack();
   },
   "ArrowUp": function () {
@@ -60,7 +117,7 @@ const handleKeyDown = {
     player2.rightPressed = true;
     // player2.velocity.x = 5;
   },
-  "Control": () => {
+  "m": () => {
     player2.attack();
   }
 }

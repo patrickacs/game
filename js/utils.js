@@ -22,13 +22,13 @@ function animate() {
     player2.update();
 
     // Detect Colisions
-    if(rectangularColision(player1.attackBox, player2) && player1.isAttacking) {
+    if(player1.isAttacking && rectangularColision(player1.attackBox, player2)) {
       player1.isAttacking = false;
       player2.health -= 10;
       document.querySelector('#player2Health').style.width = player2.health + '%';
       endGame();
     }
-    if(rectangularColision(player2.attackBox, player1) && player2.isAttacking) {
+    if (player2.isAttacking && rectangularColision(player2.attackBox, player1)) {
       player2.isAttacking = false;
       player1.health -= 10;
       document.querySelector('#player1Health').style.width= player1.health + '%';
